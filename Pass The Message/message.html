@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pass The Message!</title>
+        <meta charset="utf-8">
+        <meta name=viewport content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <style>
+        .square {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left:25%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            background-color: #e2e3e5;
+            width: 50vw;
+            height: 300px;
+            text-align: center;
+            }
+        body {
+            background-color: lightblue;
+        }
+
+        #main {
+            font-family: "calibri";
+            font-weight: lighter;
+        }
+
+        input[type="text"] {
+            width: 95%;
+            height: 40px;
+            box-sizing: border-box;
+            font-size: 150%;
+            border: 1px solid rgb(39, 39, 39);
+        }
+
+        input:focus[type="text"] {
+            border: 1px solid lightblue;
+        }
+
+        input[type="text"]:-ms-clear {
+            display:none;
+        }
+
+        input:-ms-reveal[type="text"] {
+            display:none;
+        }
+
+        #submit {
+            margin-top: 15px;
+            padding: 10px 10px;
+            color: white;
+            background-color:rgb(2, 167, 223);
+            font-family: 'Arial';
+            font-size: 1.3vw;
+            border-radius:5px;
+            box-shadow: none;
+            font-weight: 400;
+        }
+
+        #submit:hover {
+            color: black;
+        }
+
+        #submit:focus {
+            border: 3px solid rgb(134, 223, 253);
+        }
+
+        h2 {
+            font-family: "Arial";
+            text-align: center;
+            font-weight: lighter;
+            margin-bottom: 5px;
+        }
+
+        #text {
+            font-family: "Arial";
+            text-align: center;
+            font-weight: medium;
+            font-size:35px;
+            color: rgb(68, 198, 241);
+        }
+    </style>
+
+    <body>
+        <div class="square">
+            <h1 id="main">A Message You Would Like To Pass</h1>
+
+            <form>
+                <input type="text" id="delivered">
+            </form>
+            <button type="button" id="submit" onclick="newtext()">Submit</button>
+            <h2 id="last">Last Message Delivered</h2>
+            <div id="text"></div>
+        </div>
+    </body>
+
+    <script>
+        var textN;
+
+        function newtext() {
+            textN = document.querySelector("#delivered").value;
+            document.querySelector("#text").innerHTML = textN;
+            document.querySelector("#delivered").innerHTML = "";
+        }
+    </script>
+</html>

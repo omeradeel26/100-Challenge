@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name =viewport content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>Filter Project</title>
+
+    </head>
+
+    <body>
+        <div id="header">
+            <img src="img/logo.svg" width='60' height='60' style="position:absolute;left:2%;top:2%;">
+
+            <ul>
+                <li><a href="#home"><i>Home</i></a></li>
+                <li><a href="#about"><i>About</i></a></li>
+                <li><a href="#store"><i>Store</i></a></li>
+            </ul>
+
+            <span id="num">	&#9990; <div style="font-size: 75%; display: inline;"><i>+123 456 789</i></div> </span> 
+
+            <button id="shopping"><i class="fa fa-shopping-cart"></i>  2 items - $10.49</button>
+
+        </div>
+
+        <div class="hero-section">
+            <div class="top-heading">
+                <h1>Welcome to <span id="grandma">Grandma's</span></h1>
+                <button type="button" id="explore">EXPLORE</button>
+            </div>
+            <div class="color-overlay"></div>
+        </div>
+
+        <div class="mid-container">
+            <div id="about-me">About <span style="color:pink;font-size:130%;">Us</span></div>
+            <div id="about-content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,<br> aliquam voluptas beatae vitae expedita consectetur nesciunt quia<br>deserunt asperiores facere fuga dicta fugiat corrupti et omnis<br>porro at dolorum! Ad!</div>
+            <button type="button" class="about-explore">EXPLORE</button>
+
+            <img id="macaroon" src="img/sweets-1.jpeg" height="400" width= "500" onmouseover="myMove()" onmouseout="reverseMove()" >
+
+            <div id="border"></div>
+        </div>
+
+        <div class="final-container">
+
+            <div id="about-me" style="top: 5%; left:43%;">Our <span style="color:pink;font-size:130%;">Store</span></div>
+
+            <button type="button" class="about-explore" id="ALL" style="top:7%; left: 30%;">ALL</button>
+            <button type="button" class="about-explore" id="CAKES" style="top:7%; left: 33%;">CAKES</button>
+            <button type="button" class="about-explore" id="CUPCAKES" style="top:7%; left: 36%;">CUPCAKES</button>
+            <button type="button" class="about-explore" id="SWEETS" style="top:7%; left: 39%;">SWEETS</button>
+            <button type="button" class="about-explore" id="SWEETS" style="top:7%; left: 42%;">DONUGHTS</button>
+
+            <input id="search" placeholder="item..." style="position:relative; top:12%; left:12%;" onkeyup="filter()">
+
+            <br><br><br><br><br><br><br><br><br><br> <br><br>
+            
+            
+            <div class="row">
+                <div class="column">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+            
+                <div class="column">
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+                
+                <div class="column">
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+
+                    <div class="footer">
+                        hellosir
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+            
+                <div class="column">
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+                
+                <div class="column">
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+            
+                <div class="column">
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+                
+                <div class="column">
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="column">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+            
+                <div class="column">
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+                
+                <div class="column">
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Some text</p>
+                    <p>Some text</p>
+                </div>
+                </div>
+            </div>
+
+            </div>
+
+        <script>
+
+            var id = setInterval(filter, 10)
+
+            function myMove() {
+
+                var elem = document.getElementById('border');
+                var posy = -65;
+                var posx = 58;
+                var id = setInterval(frame, 10);
+
+                function frame(){
+                    if ((posy <= -61) && (posx >= 59.7)) {
+                        clearIntervalId(id);
+                    } else {
+                        posy += 0.05;
+                        posx += 0.025;
+                        elem.style.top = posy + '%';
+                        elem.style.left = posx +'%';
+                    }
+                }
+            }
+
+            function reverseMove() {
+
+                var elem = document.getElementById('border');
+                var posy = -61.2;
+                var posx = 59.7;
+                var id = setInterval(frame, 10);
+
+                function frame(){
+                    if ((posy >=-65) && (posx <= 58)) {
+                        clearIntervalId(id);
+                    } else {
+                        posy -= 0.05;
+                        posx -= 0.025;
+                        elem.style.top = posy + '%';
+                        elem.style.left = posx +'%';
+                    }
+                }
+            }
+
+            function filter() {
+                var text = document.getElementById('search');
+                var different = text.value.toUpperCase();
+                var n = different.lenght;
+
+                for (i=0; i < n; i++) {
+                    console.log(different);
+                }
+                clearInterval(id)
+            }
+        </script>
+    </body>
+</html>
